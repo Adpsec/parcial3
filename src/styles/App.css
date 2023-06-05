@@ -1,0 +1,163 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #032c7e;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(15, 15, 15);
+}
+
+.App-link {
+  color: #030303;
+}
+
+.container h2 {
+  text-align: center;
+  margin: 25px auto;
+}
+
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+.submit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+.edit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+.logo-right {
+  width: 50mm;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.wrapper {
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 60px;
+  padding: 0 20px;
+  background: #0a0a0a;
+}
+
+nav img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  padding: 8px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-items,
+.menu {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.menu-right {
+  position: relative;
+  margin-left: auto;
+  gap: 6px;
+}
+
+
+a,
+a:is(:visited, :active) {
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 24px;
+}
+
+@media (width <= 580px) {
+  .menu-right img:nth-child(n + 3) {
+    display: none;
+  }
+
+  .menu-items {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 0 20px 20px;
+    background: #161b22;
+  }
+
+  .menu-left {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .menu-left a {
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+  }
+
+  .menu-right {
+    margin-left: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+body.open .menu-items {
+  display: flex;
+  align-items: flex-end;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

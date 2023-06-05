@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  .contenedor h1{
+    color: var(--primary);
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    font-family: 'Lobster', cursive;
+  }
+  
+  .contenedor{  
+    position: absolute;
+    top: 40%;
+    left: 50%; /* Ajusta el valor del 'left' para separar los elementos */
+    transform: translate(-50%, -50%);
+  }
+  .contenedor2{  
+      position: absolute;
+      top: 50%;
+      left: 50%; /* Ajusta el valor del 'left' para separar los elementos */
+      transform: translate(-50%, -50%);
+  }
+  .contenedor3{  
+    position: absolute;
+    top: 60%;
+    left: 50%; /* Ajusta el valor del 'left' para separar los elementos */
+    transform: translate(-50%, -50%);
+  }
+
+  .logout{
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Ajusta el valor del 'left' para separar los elementos */
+    transform: translate(-50%, -50%);
+  }
+  
