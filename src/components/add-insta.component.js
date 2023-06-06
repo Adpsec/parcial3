@@ -47,7 +47,7 @@ export default class AddTutorial extends Component {
             console.error,
             () => {
                 storage
-                .ref("debut")
+                .ref("fotos")
                 .child(file.name)
                 .getDownloadURL()
                 .then((myurl) => {
@@ -117,15 +117,15 @@ export default class AddTutorial extends Component {
                     <div className="submit">
                         {this.state.submitted ? (
                         <div>
-                            <h4>Tu recuerdo se guardo correctamente</h4>
+                            <h4>Se guardo correctamente</h4>
                             <button className="btn-success" onClick={this.newClip}>
-                            Agregar Recuerdo
+                            Agregar Musico
                             </button>
                         </div>
                         ) : (
                         <div>
                             <div className="form">
-                            <label htmlFor="title">Nombre del recuerdo</label>
+                            <label htmlFor="title">Nombre: </label>
                             <input
                                 type="text"
                                 className="form-title"
@@ -137,7 +137,7 @@ export default class AddTutorial extends Component {
                             />
                             </div>
                             <div className="form">
-                    <label htmlFor="description">Descripcion</label>
+                    <label htmlFor="description">Descripcion: </label>
                     <input
                         type="text"
                         className="form-description"

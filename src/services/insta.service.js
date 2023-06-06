@@ -1,6 +1,6 @@
 import firebase from "../firebase";
 
-const db = firebase.collection("/musicos");
+const db = firebase.collection("/musics");
 
 class PhotosDataService {
     getAll() {

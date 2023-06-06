@@ -25,7 +25,8 @@ const CommentsComponent = ({ id }) => {
   };
 
   const comment = (e, status) => {
-    const email = localStorage.getItem('email');
+    //const email = localStorage.getItem('email');
+    const email = "adriel.peregrina@gmail.com"
     const data = {
       userId: email,
       objectId: id,

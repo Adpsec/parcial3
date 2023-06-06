@@ -2,12 +2,14 @@ import { initializeApp } from "firebase/app";
 import {getAuth,GoogleAuthProvider} from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBMMZ1rYySA1fEh385nIXcatvuQ3Lx_XjA",
-  authDomain: "instagramart17.firebaseapp.com",
-  projectId: "instagramart17",
-  storageBucket: "instagramart17.appspot.com",
-  messagingSenderId: "744620068492",
-  appId: "1:744620068492:web:5972a462a5d34e486fb5a9"
+  apiKey: "AIzaSyDy3--OkoSGNm1YgcG-qGR0p0KycWNQrCo",
+  authDomain: "musicosapp.firebaseapp.com",
+  projectId: "musicosapp",
+  storageBucket: "musicosapp.appspot.com",  
+  messagingSenderId: "298831854633", 
+  appId: "1:298831854633:web:b1234b11aa002daed07038", 
+  measurementId: "G-FHQF69ZBNT"
+
 };
 
 const app = initializeApp(firebaseConfig);

@@ -4,7 +4,7 @@ import '../styles/photo.css'
 import ReactionsComponent from "./reactions.component";
 import CommentsComponent from "./comments.component";
 import Login from "./login.component";
-import { Routes, Route, Link} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 export default class Tutorial extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ export default class Tutorial extends Component {
         this.updatePublished = this.updatePublished.bind(this);
         this.updateTutorial = this.updateTutorial.bind(this);
         this.deleteTutorial = this.deleteTutorial.bind(this);
-        
+
         this.state = {
             currentTutorial: {
                 id: props.tutorial.id,
@@ -26,7 +26,7 @@ export default class Tutorial extends Component {
             message: "",
         };
     }
-    
+
     static getDerivedStateFromProps(nextProps, prevState) {
         const { tutorial } = nextProps;
         if (prevState.currentTutorial.id !== tutorial.id) {
@@ -37,7 +37,7 @@ export default class Tutorial extends Component {
         }
         return prevState.currentTutorial;
     }
-    
+
     componentDidMount() {
         this.setState({
             currentTutorial: this.props.tutorial,
@@ -70,57 +70,58 @@ export default class Tutorial extends Component {
         photosDataService.update(this.state.currentTutorial.id, {
             published: status,
         })
-        .then(() => {
-            this.setState((prevState) => ({
-                currentTutorial: {
-                    ...prevState.currentTutorial,
-                    published: status,
-                },
-                message: "The status was updated successfully!",
-            }));
-        })
-        .catch((e) => {
-            console.log(e);
-        });
+            .then(() => {
+                this.setState((prevState) => ({
+                    currentTutorial: {
+                        ...prevState.currentTutorial,
+                        published: status,
+                    },
+                    message: "The status was updated successfully!",
+                }));
+            })
+            .catch((e) => {
+                console.log(e);
+            });
     }
-    
+
     updateTutorial() {
         const data = {
             title: this.state.currentTutorial.title,
             description: this.state.currentTutorial.description,
             url: this.state.currentTutorial.url,
         };
-        
+
         photosDataService.update(this.state.currentTutorial.id, data)
-        .then(() => {
-            this.setState({
-                message: "The photo was updated successfully!",
+            .then(() => {
+                this.setState({
+                    message: "The photo was updated successfully!",
+                });
+            })
+            .catch((e) => {
+                console.log(e);
             });
-        })
-        .catch((e) => {
-            console.log(e);
-        });
     }
 
     deleteTutorial() {
         photosDataService.delete(this.state.currentTutorial.id)
-        .then(() => {
-            this.props.refreshList();
-        })
-        .catch((e) => {
-            console.log(e);
-        });
+            .then(() => {
+                this.props.refreshList();
+            })
+            .catch((e) => {
+                console.log(e);
+            });
     }
-    
+
     render() {
         const { currentTutorial } = this.state;
-        const email= localStorage.getItem('email');
+        //const email = localStorage.getItem('email');
+        const email = "adriel.peregrina@gmail.com"
         return (
-        <div className="photo-container">
-            <div className="photo">
-                {currentTutorial ? (
-                <div className="edit-form">
-                    <form>
+            <div className="photo-container">
+                <div className="photo">
+                    {currentTutorial ? (
+                        <div className="edit-form">
+                            {/* <form>
                         <h4>{currentTutorial.title}</h4>
                         <h4>{currentTutorial.description}</h4>
                         {email ?
@@ -138,17 +139,23 @@ export default class Tutorial extends Component {
                             <Link to={"/login"}>Inicio Sesion</Link>
                         </div>
                         }
-                    </form>
+                    </form> */}
+                            <form>
+                                <h4>{currentTutorial.title}</h4>
+                                <h4>{currentTutorial.description}</h4>
+                                <ReactionsComponent id={currentTutorial.id} />
+                                <CommentsComponent id={currentTutorial.id} />
+                            </form>
+                        </div>
+                    ) : (
+                        <div>
+                        </div>
+                    )}
                 </div>
-                ) : (
-                <div>
-                </div>
-                )}
+                <Routes>
+                    <Route path="login" element={<Login />} />
+                </Routes>
             </div>
-            <Routes>
-                <Route path="login" element={<Login />} />
-            </Routes>
-        </div>
         );
     }
 }
