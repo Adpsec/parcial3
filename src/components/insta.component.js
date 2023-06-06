@@ -115,7 +115,7 @@ export default class Tutorial extends Component {
     render() {
         const { currentTutorial } = this.state;
         //const email = localStorage.getItem('email');
-        const email = "adriel.peregrina@gmail.com"
+        //const email = "adriel.peregrina@gmail.com"
         return (
             <div className="photo-container">
                 <div className="photo">
