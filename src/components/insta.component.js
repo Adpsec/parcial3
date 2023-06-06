@@ -114,32 +114,11 @@ export default class Tutorial extends Component {
 
     render() {
         const { currentTutorial } = this.state;
-        //const email = localStorage.getItem('email');
-        //const email = "adriel.peregrina@gmail.com"
         return (
             <div className="photo-container">
                 <div className="photo">
                     {currentTutorial ? (
                         <div className="edit-form">
-                            {/* <form>
-                        <h4>{currentTutorial.title}</h4>
-                        <h4>{currentTutorial.description}</h4>
-                        {email ?
-                        <>
-                        < ReactionsComponent 
-                        id={currentTutorial.id}
-                        />
-                        < CommentsComponent 
-                        id={currentTutorial.id}
-                        />
-                        </>
-                        :
-                        <div className="section">
-                            <h5>Inicia sesion para poder comentar y reaccionar</h5>
-                            <Link to={"/login"}>Inicio Sesion</Link>
-                        </div>
-                        }
-                    </form> */}
                             <form>
                                 <h4>{currentTutorial.title}</h4>
                                 <h4>{currentTutorial.description}</h4>
